@@ -1,0 +1,45 @@
+// metadata
+export const version = "0.1.0"
+export const title = "Struct Types"
+export const description = "Struct types in sCrypt"
+
+const html = `<p>sCrypt allows looping by repeating the loop body a specified number of times. For example, the loop</p>
+<pre><code class="language-javascript">loop (<span class="hljs-number">10</span>) {
+    x = x * <span class="hljs-number">2</span>;
+}
+</code></pre>
+<p>gets unrolled to</p>
+<pre><code class="language-javascript">x = x * <span class="hljs-number">2</span>;
+x = x * <span class="hljs-number">2</span>;
+x = x * <span class="hljs-number">2</span>;
+x = x * <span class="hljs-number">2</span>;
+x = x * <span class="hljs-number">2</span>;
+x = x * <span class="hljs-number">2</span>;
+x = x * <span class="hljs-number">2</span>;
+x = x * <span class="hljs-number">2</span>;
+x = x * <span class="hljs-number">2</span>;
+x = x * <span class="hljs-number">2</span>;
+</code></pre>
+<p>Because loop unrolling is done at compile time, the loop count must be a compile time constant.</p>
+<p>We can also access the loop index by defining an induction variable:</p>
+<pre><code class="language-javascript"><span class="hljs-comment">// int[3][4] matrix;</span>
+loop (<span class="hljs-number">3</span>) : i {
+    loop (<span class="hljs-number">4</span>) : j {
+        matrix[i][j] = i + j;
+    }
+}
+</code></pre>
+<p>Loops in sCrypt do not support a break statement, but we can simulate one using conditionals:</p>
+<pre><code class="language-javascript">bool done = <span class="hljs-literal">false</span>;
+loop (<span class="hljs-number">3</span>) {
+    <span class="hljs-keyword">if</span> (!done) {
+        x = x * <span class="hljs-number">2</span>;
+        <span class="hljs-keyword">if</span> (x &gt;= <span class="hljs-number">8</span>) {
+            done = <span class="hljs-literal">true</span>;
+        }
+    }
+}
+</code></pre>
+`
+
+export default html

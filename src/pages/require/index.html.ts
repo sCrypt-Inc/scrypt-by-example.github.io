@@ -1,0 +1,18 @@
+// metadata
+export const version = "0.1.0"
+export const title = "Require"
+export const description = "Require function in sCrypt"
+
+const html = `<p>The <code>require()</code> function specifies terms/conditions of a contract. It consumes a boolean condition. If the condition is not met, the contract will abort execution and fail. Otherwise, the execution will resume.</p>
+<p>Every public function must end with a <code>require()</code> call.</p>
+<pre><code class="language-javascript">contract <span class="hljs-title class_">Test</span> {
+    int x;
+
+    public <span class="hljs-keyword">function</span> <span class="hljs-title function_">equal</span>(<span class="hljs-params">int y</span>) {
+        <span class="hljs-built_in">require</span>(y == <span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span>);
+    }
+}
+</code></pre>
+`
+
+export default html
