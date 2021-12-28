@@ -1,7 +1,0 @@
-contract Test {
-    int x;
-
-    public function equal(int y) {
-        require(y == this.x);
-    }
-}

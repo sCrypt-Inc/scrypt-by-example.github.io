@@ -1,7 +1,0 @@
-contract Test {
-    int x1;
-    bytes x2;
-    bool x3;
-
-    public function equal(int y) {}
-}

@@ -1,7 +1,0 @@
-contract HelloWorld {
-    int x;
-
-    public function equals(int y) {
-        require(y == this.x);
-    }
-}
