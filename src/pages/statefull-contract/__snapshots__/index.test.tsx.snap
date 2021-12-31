@@ -2,18 +2,37 @@
 
 exports[`it renders 1`] = `
 <Example
-  description="Hello world in Solidity"
-  html="<p><code>pragma</code> specifies the compiler version of Solidity.</p>
-<pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
-<span class=\\"hljs-comment\\">// compiler version must be greater than or equal to 0.8.10 and less than 0.9.0</span>
-<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.10;</span>
+  description="Statefull contracts in sCrypt"
+  html="<p>Declare any property that is part of the state with <code>@state</code> decorator. The state property can be used the same way as a regular property.</p>
+<p>In order to presist the state, we need to enforce it in the output of the transaction, that will spend our contract in the future. To achieve that, the spending transaction must pass it&#39;s transaction preimage.</p>
+<pre><code class=\\"language-javascript\\">contract <span class=\\"hljs-title class_\\">Counter</span> {
+    @state
+    int counter;
 
-<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">HelloWorld</span> </span>{
-    <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">public</span> greet = <span class=\\"hljs-string\\">\\"Hello World!\\"</span>;
+    <span class=\\"hljs-title function_\\">constructor</span>(<span class=\\"hljs-params\\">int counter</span>) {
+        <span class=\\"hljs-variable language_\\">this</span>.<span class=\\"hljs-property\\">counter</span> = counter;
+    }
+
+    public <span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title function_\\">increment</span>(<span class=\\"hljs-params\\">SigHashPreimage txPreimage, int amount</span>) {
+        <span class=\\"hljs-comment\\">// Ensure that the passed preimage is correct for this TX.</span>
+        <span class=\\"hljs-built_in\\">require</span>(<span class=\\"hljs-title class_\\">Tx</span>.<span class=\\"hljs-title function_\\">checkPreimage</span>(txPreimage));
+
+        <span class=\\"hljs-comment\\">// Mutate state.</span>
+        <span class=\\"hljs-variable language_\\">this</span>.<span class=\\"hljs-property\\">counter</span>++;
+
+        <span class=\\"hljs-comment\\">// Get this TXs output.</span>
+        bytes outputScript = <span class=\\"hljs-variable language_\\">this</span>.<span class=\\"hljs-title function_\\">getStateScript</span>();
+
+        <span class=\\"hljs-comment\\">// Construct an output from its locking script and satoshi amount.</span>
+        bytes output = <span class=\\"hljs-title class_\\">Util</span>.<span class=\\"hljs-title function_\\">buildOutput</span>(outputScript, amount);
+
+        <span class=\\"hljs-comment\\">// Ensure that the TX actually contains this exact output.</span>
+        <span class=\\"hljs-built_in\\">require</span>(<span class=\\"hljs-title function_\\">hash256</span>(output) == <span class=\\"hljs-title class_\\">Util</span>.<span class=\\"hljs-title function_\\">hashOutputs</span>(txPreimage));
+    }
 }
 </code></pre>
 "
-  title="Hello World"
-  version="0.8.10"
+  title="Statefull Contract"
+  version="0.1.0"
 />
 `;

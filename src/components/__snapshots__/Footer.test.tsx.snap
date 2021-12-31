@@ -8,15 +8,15 @@ exports[`it renders 1`] = `
     className="row"
   >
     <img
-      alt="smart contract engineer"
-      className="sce"
-      src="sce.png"
+      alt="sCrypt"
+      className="scrypt"
+      src="scrypt.png"
     />
     <a
-      href="https://www.smartcontract.engineer"
+      href="https://scrypt.io/"
       target="__blank"
     >
-      Smart Contract Engineer
+      sCrypt - A high-level language for Bitcoin scripting.
     </a>
   </div>
   <div
@@ -26,15 +26,45 @@ exports[`it renders 1`] = `
       className="row"
     >
       <img
-        alt="discord"
-        className="discord"
-        src="discord.png"
+        alt="github"
+        className="github"
+        src="github.png"
       />
       <a
-        href="https://discord.gg/bt8FK2wkcW"
+        href="https://github.com/sCrypt-Inc"
         target="__blank"
       >
-        Discord
+        GitHub
+      </a>
+    </div>
+    <div
+      className="row"
+    >
+      <img
+        alt="medium"
+        className="medium"
+        src="medium.png"
+      />
+      <a
+        href="https://github.com/sCrypt-Inc"
+        target="__blank"
+      >
+        Medium
+      </a>
+    </div>
+    <div
+      className="row"
+    >
+      <img
+        alt="slack"
+        className="slack"
+        src="slack.png"
+      />
+      <a
+        href="https://join.slack.com/t/scryptworkspace/shared_invite/enQtNzQ1OTMyNDk1ODU3LTJmYjE5MGNmNDZhYmYxZWM4ZGY2MTczM2NiNTIxYmFhNTVjNjE5MGYwY2UwNDYxMTQyNGU2NmFkNTY5MmI1MWM"
+        target="__blank"
+      >
+        Slack
       </a>
     </div>
     <div
@@ -46,77 +76,27 @@ exports[`it renders 1`] = `
         src="telegram.png"
       />
       <a
-        href="https://t.me/smartcontractprogrammer"
+        href="https://t.me/joinchat/GwaRAxKT16JjXyHt5PuhHw"
         target="__blank"
       >
         Telegram
       </a>
     </div>
-    <div
-      className="row"
-    >
-      <img
-        alt="youtube"
-        className="youTube"
-        src="youtube.svg"
-      />
-      <a
-        href="https://www.youtube.com/channel/UCJWh7F3AFyQ_x01VKzr9eyA"
-        target="__blank"
-      >
-        YouTube
-      </a>
-    </div>
-  </div>
-  <div
-    className="row"
-  >
-    Donate
-    <span
-      aria-label="smiley"
-      role="img"
-    >
-      🙂
-    </span>
   </div>
   <div
     className="row"
   >
     <a
-      href="https://etherscan.io/address/0x95a647B3d8a3F11176BAdB799b9499C671fa243a"
-      target="__blank"
+      href="mailto:contact@support@scrypt.io"
     >
-      0x95a6
-      ...
-      fa243
-    </a>
-  </div>
-  <div
-    className="row"
-  >
-    your ETH will directly go to
-    <a
-      className="khan"
-      href="https://khanacademy.org"
-      target="__blank"
-    >
-      Khan Academy
+      support@scrypt.io
     </a>
   </div>
   <div
     className="row"
   >
     <a
-      href="mailto:contact@solidity-by-example.org"
-    >
-      contact@solidity-by-example.org
-    </a>
-  </div>
-  <div
-    className="row"
-  >
-    <a
-      href="https://github.com/solidity-by-example/solidity-by-example.github.io"
+      href="https://github.com/sCrypt-Inc/scrypt-by-example.github.io"
       target="__blank"
     >
       source
@@ -127,7 +107,7 @@ exports[`it renders 1`] = `
       |
     </div>
     <a
-      href="https://github.com/solidity-by-example/solidity-by-example.github.io/blob/gh-pages/LICENSE"
+      href="https://github.com/sCrypt-Inc/scrypt-by-example.github.io/blob/gh-pages/LICENSE"
       target="__blank"
     >
       license

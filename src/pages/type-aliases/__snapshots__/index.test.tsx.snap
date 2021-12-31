@@ -2,18 +2,21 @@
 
 exports[`it renders 1`] = `
 <Example
-  description="Hello world in Solidity"
-  html="<p><code>pragma</code> specifies the compiler version of Solidity.</p>
-<pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
-<span class=\\"hljs-comment\\">// compiler version must be greater than or equal to 0.8.10 and less than 0.9.0</span>
-<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.10;</span>
-
-<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">HelloWorld</span> </span>{
-    <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">public</span> greet = <span class=\\"hljs-string\\">\\"Hello World!\\"</span>;
+  description="Type aliases in sCrypt"
+  html="<p>Type aliases create a new name for a type. It does not actually create a new type, it merely creates a new name to refer to that type.</p>
+<pre><code class=\\"language-javascript\\">type <span class=\\"hljs-title class_\\">Age</span> = int;
+type <span class=\\"hljs-title class_\\">Coordinate</span> = int[<span class=\\"hljs-number\\">2</span>];
+</code></pre>
+<p>They can also be used for struct types.</p>
+<pre><code class=\\"language-javascript\\">struct <span class=\\"hljs-title class_\\">Point</span> {
+  int x;
+  int y;
 }
 </code></pre>
+<pre><code class=\\"language-javascript\\">type <span class=\\"hljs-title class_\\">Coordinate</span> = <span class=\\"hljs-title class_\\">Point</span>;
+</code></pre>
 "
-  title="Hello World"
-  version="0.8.10"
+  title="Type Aliases"
+  version="0.1.0"
 />
 `;

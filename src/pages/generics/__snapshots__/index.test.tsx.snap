@@ -2,18 +2,23 @@
 
 exports[`it renders 1`] = `
 <Example
-  description="Hello world in Solidity"
-  html="<p><code>pragma</code> specifies the compiler version of Solidity.</p>
-<pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
-<span class=\\"hljs-comment\\">// compiler version must be greater than or equal to 0.8.10 and less than 0.9.0</span>
-<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.10;</span>
+  description="Generic types in sCrypt"
+  html="<p>A generic type is a parameterized type. It allows a library to work over a variety of types rather than a single one. Users can consume these libraries and use their own concrete types.</p>
+<p>Generic types can only be declared at library level and used within the library’s scope.</p>
+<pre><code class=\\"language-javascript\\">library <span class=\\"hljs-title class_\\">HashedMap</span>&lt;K, V&gt; {
 
-<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">HelloWorld</span> </span>{
-    <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">public</span> greet = <span class=\\"hljs-string\\">\\"Hello World!\\"</span>;
+  <span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title function_\\">set</span>(<span class=\\"hljs-params\\">K k, V v, int idx</span>) {
+    ...
+  }
+
 }
 </code></pre>
+<p>Usage:</p>
+<pre><code class=\\"language-javascript\\"><span class=\\"hljs-title class_\\">HashedMap</span>&lt;bytes, int&gt; map = <span class=\\"hljs-keyword\\">new</span> <span class=\\"hljs-title class_\\">HashedMap</span>();
+map.<span class=\\"hljs-title function_\\">set</span>(b<span class=\\"hljs-string\\">&#x27;01&#x27;</span>, <span class=\\"hljs-number\\">1</span>, <span class=\\"hljs-number\\">0</span>);
+</code></pre>
 "
-  title="Hello World"
-  version="0.8.10"
+  title="Generic Types"
+  version="0.1.0"
 />
 `;

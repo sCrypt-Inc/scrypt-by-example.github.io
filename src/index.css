@@ -64,7 +64,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
   color: rgb(231, 76, 60);
 }
-.language-solidity {
+.language-scrypt {
   display: block;
   color: var(--color);
 }

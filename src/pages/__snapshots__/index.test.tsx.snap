@@ -5,8 +5,8 @@ exports[`it renders 1`] = `
   className="component"
 >
   <SEO
-    description="Learn smart contract programming using Solidity"
-    title="Solidity by Example | 0.8.10"
+    description="Learn smart contract programming using sCrypt"
+    title="sCrypt by Example"
   />
   <h1
     className="header"
@@ -14,23 +14,21 @@ exports[`it renders 1`] = `
     <a
       href="/"
     >
-      Solidity by Example
+      sCrypt by Example
     </a>
   </h1>
   <div
     className="subHeader"
-  >
-    v 0.8.10
-  </div>
+  />
   <div
     className="main"
   >
     <p>
       an introduction to 
       <a
-        href="https://solidity.readthedocs.io"
+        href="https://scrypt.io/"
       >
-        Solidity
+        sCrypt
       </a>
        with simple examples
     </p>
@@ -43,10 +41,10 @@ exports[`it renders 1`] = `
         src="youtube.svg"
       />
       <a
-        href="https://www.youtube.com/channel/UCJWh7F3AFyQ_x01VKzr9eyA"
+        href="https://www.youtube.com/watch?v=xPfCM6gBl-Y&list=PL0Kn1t30VSpG4Fu2ze81uDptBd1ZML99A"
         target="__blank"
       >
-        Most code are explained here
+        Learning sCrypt video playlist.
       </a>
     </div>
     <div
@@ -54,19 +52,7 @@ exports[`it renders 1`] = `
     >
       <div
         key="0"
-      >
-        2021/12/12 - GitHub PR dadaphl
-      </div>
-      <div
-        key="1"
-      >
-        2021/12/02 - GitHub PR yc90s
-      </div>
-      <div
-        key="2"
-      >
-        2021/11/15 - GitHub PR basnijholt
-      </div>
+      />
     </div>
     <div
       key="0"
@@ -86,206 +72,6 @@ exports[`it renders 1`] = `
         </li>
         <li
           className="listItem"
-          key="first-app"
-        >
-          <a
-            href="first-app"
-          >
-            First App
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="primitives"
-        >
-          <a
-            href="primitives"
-          >
-            Primitive Data Types
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="variables"
-        >
-          <a
-            href="variables"
-          >
-            Variables
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="constants"
-        >
-          <a
-            href="constants"
-          >
-            Constants
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="immutable"
-        >
-          <a
-            href="immutable"
-          >
-            Immutable
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="state-variables"
-        >
-          <a
-            href="state-variables"
-          >
-            Reading and Writing to a State Variable
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="ether-units"
-        >
-          <a
-            href="ether-units"
-          >
-            Ether and Wei
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="gas"
-        >
-          <a
-            href="gas"
-          >
-            Gas and Gas Price
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="if-else"
-        >
-          <a
-            href="if-else"
-          >
-            If / Else
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="loop"
-        >
-          <a
-            href="loop"
-          >
-            For and While Loop
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="mapping"
-        >
-          <a
-            href="mapping"
-          >
-            Mapping
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="array"
-        >
-          <a
-            href="array"
-          >
-            Array
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="enum"
-        >
-          <a
-            href="enum"
-          >
-            Enum
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="structs"
-        >
-          <a
-            href="structs"
-          >
-            Structs
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="data-locations"
-        >
-          <a
-            href="data-locations"
-          >
-            Data Locations - Storage, Memory and Calldata
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="function"
-        >
-          <a
-            href="function"
-          >
-            Function
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="view-and-pure-functions"
-        >
-          <a
-            href="view-and-pure-functions"
-          >
-            View and Pure Functions
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="error"
-        >
-          <a
-            href="error"
-          >
-            Error
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="function-modifier"
-        >
-          <a
-            href="function-modifier"
-          >
-            Function Modifier
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="events"
-        >
-          <a
-            href="events"
-          >
-            Events
-          </a>
-        </li>
-        <li
-          className="listItem"
           key="constructor"
         >
           <a
@@ -296,152 +82,172 @@ exports[`it renders 1`] = `
         </li>
         <li
           className="listItem"
-          key="inheritance"
+          key="require"
         >
           <a
-            href="inheritance"
+            href="require"
           >
-            Inheritance
+            Require
           </a>
         </li>
         <li
           className="listItem"
-          key="shadowing-inherited-state-variables"
+          key="basic-types"
         >
           <a
-            href="shadowing-inherited-state-variables"
+            href="basic-types"
           >
-            Shadowing Inherited State Variables
+            Basic Types
           </a>
         </li>
         <li
           className="listItem"
-          key="super"
+          key="array-types"
         >
           <a
-            href="super"
+            href="array-types"
           >
-            Calling Parent Contracts
+            Array Types
           </a>
         </li>
         <li
           className="listItem"
-          key="visibility"
+          key="struct-types"
         >
           <a
-            href="visibility"
+            href="struct-types"
           >
-            Visibility
+            Struct Types
           </a>
         </li>
         <li
           className="listItem"
-          key="interface"
+          key="type-inference"
         >
           <a
-            href="interface"
+            href="type-inference"
           >
-            Interface
+            Type Inference
           </a>
         </li>
         <li
           className="listItem"
-          key="payable"
+          key="type-aliases"
         >
           <a
-            href="payable"
+            href="type-aliases"
           >
-            Payable
+            Type Aliases
           </a>
         </li>
         <li
           className="listItem"
-          key="sending-ether"
+          key="generics"
         >
           <a
-            href="sending-ether"
+            href="generics"
           >
-            Sending Ether - Transfer, Send, and Call
+            Generics
           </a>
         </li>
         <li
           className="listItem"
-          key="fallback"
+          key="const-variables"
         >
           <a
-            href="fallback"
+            href="const-variables"
           >
-            Fallback
+            Const Variables
           </a>
         </li>
         <li
           className="listItem"
-          key="call"
+          key="public-function"
         >
           <a
-            href="call"
+            href="public-function"
           >
-            Call
+            Public Function
           </a>
         </li>
         <li
           className="listItem"
-          key="delegatecall"
+          key="contract-private-functions"
         >
           <a
-            href="delegatecall"
+            href="contract-private-functions"
           >
-            Delegatecall
+            Contract-Private Functions
           </a>
         </li>
         <li
           className="listItem"
-          key="function-selector"
+          key="exit"
         >
           <a
-            href="function-selector"
+            href="exit"
           >
-            Function Selector
+            Exit
           </a>
         </li>
         <li
           className="listItem"
-          key="calling-contract"
+          key="code-seperator"
         >
           <a
-            href="calling-contract"
+            href="code-seperator"
           >
-            Calling Other Contract
+            Code seperator
           </a>
         </li>
         <li
           className="listItem"
-          key="new-contract"
+          key="access-modifiers"
         >
           <a
-            href="new-contract"
+            href="access-modifiers"
           >
-            Creating Contracts from a Contract
+            Access Modifiers
           </a>
         </li>
         <li
           className="listItem"
-          key="try-catch"
+          key="operators"
         >
           <a
-            href="try-catch"
+            href="operators"
           >
-            Try / Catch
+            Operators
           </a>
         </li>
         <li
           className="listItem"
-          key="import"
+          key="scoping"
         >
           <a
-            href="import"
+            href="scoping"
           >
-            Import
+            Scoping
+          </a>
+        </li>
+        <li
+          className="listItem"
+          key="static"
+        >
+          <a
+            href="static"
+          >
+            Static
+          </a>
+        </li>
+        <li
+          className="listItem"
+          key="loop"
+        >
+          <a
+            href="loop"
+          >
+            Loop
           </a>
         </li>
         <li
@@ -456,361 +262,22 @@ exports[`it renders 1`] = `
         </li>
         <li
           className="listItem"
-          key="hashing"
+          key="import"
         >
           <a
-            href="hashing"
+            href="import"
           >
-            Hashing with Keccak256
+            Import
           </a>
         </li>
         <li
           className="listItem"
-          key="signature"
+          key="statefull-contract"
         >
           <a
-            href="signature"
+            href="statefull-contract"
           >
-            Verifying Signature
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div
-      key="1"
-    >
-      <h3
-        className="category"
-      >
-        Applications
-      </h3>
-      <ul
-        className="list"
-      >
-        <li
-          className="listItem"
-          key="/app/ether-wallet"
-        >
-          <a
-            href="/app/ether-wallet"
-          >
-            Ether Wallet
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="/app/multi-sig-wallet"
-        >
-          <a
-            href="/app/multi-sig-wallet"
-          >
-            Multi Sig Wallet
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="/app/merkle-tree"
-        >
-          <a
-            href="/app/merkle-tree"
-          >
-            Merkle Tree
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="/app/iterable-mapping"
-        >
-          <a
-            href="/app/iterable-mapping"
-          >
-            Iterable Mapping
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="/app/erc20"
-        >
-          <a
-            href="/app/erc20"
-          >
-            ERC20
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="/app/erc721"
-        >
-          <a
-            href="/app/erc721"
-          >
-            ERC721
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="/app/create2"
-        >
-          <a
-            href="/app/create2"
-          >
-            Precompute Contract Address with Create2
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="/app/minimal-proxy"
-        >
-          <a
-            href="/app/minimal-proxy"
-          >
-            Minimal Proxy Contract
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="/app/deploy-any-contract"
-        >
-          <a
-            href="/app/deploy-any-contract"
-          >
-            Deploy Any Contract
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="/app/uni-directional-payment-channel"
-        >
-          <a
-            href="/app/uni-directional-payment-channel"
-          >
-            Uni-directional Payment Channel
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="/app/bi-directional-payment-channel"
-        >
-          <a
-            href="/app/bi-directional-payment-channel"
-          >
-            Bi-directional Payment Channel
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="/app/english-auction"
-        >
-          <a
-            href="/app/english-auction"
-          >
-            English Auction
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="/app/dutch-auction"
-        >
-          <a
-            href="/app/dutch-auction"
-          >
-            Dutch Auction
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div
-      key="2"
-    >
-      <h3
-        className="category"
-      >
-        Hacks
-      </h3>
-      <ul
-        className="list"
-      >
-        <li
-          className="listItem"
-          key="/hacks/re-entrancy"
-        >
-          <a
-            href="/hacks/re-entrancy"
-          >
-            Re-Entrancy
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="/hacks/overflow"
-        >
-          <a
-            href="/hacks/overflow"
-          >
-            Arithmetic Overflow and Underflow
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="/hacks/self-destruct"
-        >
-          <a
-            href="/hacks/self-destruct"
-          >
-            Self Destruct
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="/hacks/accessing-private-data"
-        >
-          <a
-            href="/hacks/accessing-private-data"
-          >
-            Accessing Private Data
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="/hacks/delegatecall"
-        >
-          <a
-            href="/hacks/delegatecall"
-          >
-            Delegatecall
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="/hacks/randomness"
-        >
-          <a
-            href="/hacks/randomness"
-          >
-            Source of Randomness
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="/hacks/denial-of-service"
-        >
-          <a
-            href="/hacks/denial-of-service"
-          >
-            Denial of Service
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="/hacks/phishing-with-tx-origin"
-        >
-          <a
-            href="/hacks/phishing-with-tx-origin"
-          >
-            Phishing with tx.origin
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="/hacks/hiding-malicious-code-with-external-contract"
-        >
-          <a
-            href="/hacks/hiding-malicious-code-with-external-contract"
-          >
-            Hiding Malicious Code with External Contract
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="/hacks/honeypot"
-        >
-          <a
-            href="/hacks/honeypot"
-          >
-            Honeypot
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="/hacks/front-running"
-        >
-          <a
-            href="/hacks/front-running"
-          >
-            Front Running
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="/hacks/block-timestamp-manipulation"
-        >
-          <a
-            href="/hacks/block-timestamp-manipulation"
-          >
-            Block Timestamp Manipulation
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="/hacks/signature-replay"
-        >
-          <a
-            href="/hacks/signature-replay"
-          >
-            Signature Replay
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="/hacks/contract-size"
-        >
-          <a
-            href="/hacks/contract-size"
-          >
-            Bypass Contract Size Check
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div
-      key="3"
-    >
-      <h3
-        className="category"
-      >
-        DeFi
-      </h3>
-      <ul
-        className="list"
-      >
-        <li
-          className="listItem"
-          key="/defi/uniswap-v2"
-        >
-          <a
-            href="/defi/uniswap-v2"
-          >
-            Uniswap V2
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="/defi/chainlink-price-oracle"
-        >
-          <a
-            href="/defi/chainlink-price-oracle"
-          >
-            Chainlink Price Oracle
-          </a>
-        </li>
-        <li
-          className="listItem"
-          key="/defi/staking-rewards"
-        >
-          <a
-            href="/defi/staking-rewards"
-          >
-            Staking Rewards
+            Statefull Contract
           </a>
         </li>
       </ul>

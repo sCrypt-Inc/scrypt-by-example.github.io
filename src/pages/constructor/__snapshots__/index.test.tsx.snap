@@ -2,18 +2,35 @@
 
 exports[`it renders 1`] = `
 <Example
-  description="Hello world in Solidity"
-  html="<p><code>pragma</code> specifies the compiler version of Solidity.</p>
-<pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
-<span class=\\"hljs-comment\\">// compiler version must be greater than or equal to 0.8.10 and less than 0.9.0</span>
-<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.10;</span>
+  description="Constructors in sCrypt"
+  html="<p>We can define a constructor in order to store variables in a contract (locking script).</p>
+<p>The constructor can be defined implicitly:</p>
+<pre><code class=\\"language-javascript\\">contract <span class=\\"hljs-title class_\\">Test</span> {
+    int x1;
+    bytes x2;
+    bool x3;
 
-<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">HelloWorld</span> </span>{
-    <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">public</span> greet = <span class=\\"hljs-string\\">\\"Hello World!\\"</span>;
+    public <span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title function_\\">equal</span>(<span class=\\"hljs-params\\">int y</span>) {}
 }
 </code></pre>
+<p>or explicitly:</p>
+<pre><code class=\\"language-javascript\\">contract <span class=\\"hljs-title class_\\">Test</span> {
+    int x1;
+    bytes x2;
+    bool x3;
+
+    <span class=\\"hljs-title function_\\">constructor</span>(<span class=\\"hljs-params\\">int x1, bytes x2, bool x3</span>) {
+        <span class=\\"hljs-variable language_\\">this</span>.<span class=\\"hljs-property\\">x1</span> = x1;
+        <span class=\\"hljs-variable language_\\">this</span>.<span class=\\"hljs-property\\">x2</span> = x2;
+        <span class=\\"hljs-variable language_\\">this</span>.<span class=\\"hljs-property\\">x3</span> = x3;
+    }
+
+    public <span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title function_\\">equal</span>(<span class=\\"hljs-params\\">int y</span>) {}
+}
+</code></pre>
+<p>Both examples are functionally equivalent.</p>
 "
-  title="Hello World"
-  version="0.8.10"
+  title="Constructor"
+  version="0.1.0"
 />
 `;

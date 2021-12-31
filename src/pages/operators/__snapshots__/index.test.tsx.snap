@@ -2,18 +2,79 @@
 
 exports[`it renders 1`] = `
 <Example
-  description="Hello world in Solidity"
-  html="<p><code>pragma</code> specifies the compiler version of Solidity.</p>
-<pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
-<span class=\\"hljs-comment\\">// compiler version must be greater than or equal to 0.8.10 and less than 0.9.0</span>
-<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.10;</span>
-
-<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">HelloWorld</span> </span>{
-    <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">public</span> greet = <span class=\\"hljs-string\\">\\"Hello World!\\"</span>;
-}
-</code></pre>
+  description="Struct types in sCrypt"
+  html="<table>
+<thead>
+<tr>
+<th><strong>Precedence</strong></th>
+<th><strong>Operators</strong></th>
+<th><strong>Associativity</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><code>- ! ~</code></td>
+<td>right</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>* / %</code></td>
+<td>left</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>+ -</code></td>
+<td>left</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>&lt;&lt; &gt;&gt;</code></td>
+<td>left</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>&lt; &lt;= &gt; &gt;=</code></td>
+<td>left</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>== !=</code></td>
+<td>left</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>&amp;</code></td>
+<td>left</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>^</code></td>
+<td>left</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>|</code></td>
+<td>left</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>&amp;&amp;</code></td>
+<td>left</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>||</code></td>
+<td>left</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>? :</code></td>
+<td>right</td>
+</tr>
+</tbody></table>
+<p>Operators <code>&amp;&amp;</code>, <code>||</code>, and <code>? :</code> use <a href=\\"https://en.wikipedia.org/wiki/Short-circuit_evaluation\\">short-circuit evaluation</a>.</p>
 "
-  title="Hello World"
-  version="0.8.10"
+  title="Struct Types"
+  version="0.1.0"
 />
 `;

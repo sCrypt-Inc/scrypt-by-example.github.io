@@ -2,18 +2,16 @@
 
 exports[`it renders 1`] = `
 <Example
-  description="Hello world in Solidity"
-  html="<p><code>pragma</code> specifies the compiler version of Solidity.</p>
-<pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
-<span class=\\"hljs-comment\\">// compiler version must be greater than or equal to 0.8.10 and less than 0.9.0</span>
-<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.10;</span>
-
-<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">HelloWorld</span> </span>{
-    <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">public</span> greet = <span class=\\"hljs-string\\">\\"Hello World!\\"</span>;
+  description="Contract-private functions in sCrypt"
+  html="<p>sCrypt enables developers to define their own functions as exemplified below:</p>
+<pre><code class=\\"language-javascript\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title function_\\">sum</span>(<span class=\\"hljs-params\\">int a, int b</span>): int {
+    <span class=\\"hljs-keyword\\">return</span> a + b;
 }
 </code></pre>
+<p>They are only visible within the contract, similar to <code>private</code> functions in Solidity.</p>
+<p>Every function must end with a <code>return</code> statement. Recursion is disallowed. A function cannot call itself in its body, either directly or indirectly.</p>
 "
-  title="Hello World"
-  version="0.8.10"
+  title="Contract-Private functions"
+  version="0.1.0"
 />
 `;
