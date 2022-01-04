@@ -1,7 +1,7 @@
 // metadata
 export const version = "0.1.0"
-export const title = "Statefull Contract"
-export const description = "Statefull contracts in sCrypt"
+export const title = "Stateful Contract"
+export const description = "Stateful contracts in sCrypt"
 
 const html = `<p>Declare any property that is part of the state with <code>@state</code> decorator. The state property can be used the same way as a regular property.</p>
 <p>In order to presist the state, we need to enforce it in the output of the transaction, that will spend our contract in the future. To achieve that, the spending transaction must pass it&#39;s transaction preimage.</p>

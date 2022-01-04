@@ -1,7 +1,7 @@
 ---
-title: Statefull Contract
+title: Stateful Contract
 version: 0.1.0
-description: Statefull contracts in sCrypt
+description: Stateful contracts in sCrypt
 ---
 
 Declare any property that is part of the state with `@state` decorator. The state property can be used the same way as a regular property.

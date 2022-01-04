@@ -94,8 +94,8 @@ const SOL_ROUTES: Route[] = [
     title: "Import",
   },
   {
-    path: "statefull-contract",
-    title: "Statefull Contract",
+    path: "stateful-contract",
+    title: "Stateful Contract",
   },
 ]
 

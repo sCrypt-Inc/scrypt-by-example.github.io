@@ -15,7 +15,7 @@ import component_operators from "./pages/operators"
 import component_public_function from "./pages/public-function"
 import component_require from "./pages/require"
 import component_scoping from "./pages/scoping"
-import component_statefull_contract from "./pages/statefull-contract"
+import component_stateful_contract from "./pages/stateful-contract"
 import component_static from "./pages/static"
 import component_struct_types from "./pages/struct-types"
 import component_type_aliases from "./pages/type-aliases"
@@ -98,8 +98,8 @@ const routes: Route[] = [
         component: component_scoping
     },
     {
-        path: "/statefull-contract",
-        component: component_statefull_contract
+        path: "/stateful-contract",
+        component: component_stateful_contract
     },
     {
         path: "/static",
