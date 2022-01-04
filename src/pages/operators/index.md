@@ -1,7 +1,7 @@
 ---
-title: Struct Types
+title: Operators
 version: 0.1.0
-description: Struct types in sCrypt
+description: Operators in sCrypt
 ---
 
 |**Precedence**|**Operators**|**Associativity**|

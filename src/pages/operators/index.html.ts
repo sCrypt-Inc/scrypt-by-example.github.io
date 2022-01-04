@@ -1,7 +1,7 @@
 // metadata
 export const version = "0.1.0"
-export const title = "Struct Types"
-export const description = "Struct types in sCrypt"
+export const title = "Operators"
+export const description = "Operators in sCrypt"
 
 const html = `<table>
 <thead>
