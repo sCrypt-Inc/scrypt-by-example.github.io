@@ -15,7 +15,7 @@ function Footer() {
       <div className={styles.row}>
         <img src={scrypt} alt="sCrypt" className={styles.scrypt} />
         <a href="https://scrypt.io/" target="__blank">
-          sCrypt - A high-level language for Bitcoin scripting.
+          sCrypt - A High-Level Language for Bitcoin Smart Contracts.
         </a>
       </div>
       <div className={styles.social}>
@@ -27,7 +27,7 @@ function Footer() {
         </div>
         <div className={styles.row}>
           <img src={medium} alt="medium" className={styles.medium} />
-          <a href="https://github.com/sCrypt-Inc" target="__blank">
+          <a href="https://medium.com/@xiaohuiliu" target="__blank">
             Medium
           </a>
         </div>

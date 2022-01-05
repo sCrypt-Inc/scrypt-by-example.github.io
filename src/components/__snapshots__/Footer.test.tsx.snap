@@ -16,7 +16,7 @@ exports[`it renders 1`] = `
       href="https://scrypt.io/"
       target="__blank"
     >
-      sCrypt - A high-level language for Bitcoin scripting.
+      sCrypt - A High-Level Language for Bitcoin Smart Contracts.
     </a>
   </div>
   <div
@@ -46,7 +46,7 @@ exports[`it renders 1`] = `
         src="medium.png"
       />
       <a
-        href="https://github.com/sCrypt-Inc"
+        href="https://medium.com/@xiaohuiliu"
         target="__blank"
       >
         Medium
