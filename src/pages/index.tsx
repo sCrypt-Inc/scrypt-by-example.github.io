@@ -108,58 +108,58 @@ const SOL_ROUTES: Route[] = [
 ]
 
 const APP_ROUTES: Route[] = [
-  //{
-  //  path: "p2pkh",
-  //  title: "Pay to Public Key Hash (P2PKH)",
-  //},
-  //{
-  //  path: "r-puzzle",
-  //  title: "R-Puzzle",
-  //},
-  //{
-  //  path: "rabin-signature",
-  //  title: "Rabin Signature",
-  //},
-  //{
-  //  path: "schnoor-signatures",
-  //  title: "Schnoor Signatures",
-  //},
-  //{
-  //  path: "multiparty-hash-puzzles",
-  //  title: "Multiparty Hash Puzzles",
-  //},
-  //{
-  //  path: "ecdsa-oracles",
-  //  title: "ECDSA-based Oracles",
-  //},
-  //{
-  //  path: "vanity-address",
-  //  title: "Trustless Outsourced Vanity Address Generation",
-  //},
-  //{
-  //  path: "auction",
-  //  title: "Auctions",
-  //},
-  //{
-  //  path: "cointoss",
-  //  title: "Fair Coin Toss",
-  //},
-  //{
-  //  path: "tic-tac-toe",
-  //  title: "Tic-Tac-Toe",
-  //},
-  //{
-  //  path: "rule110",
-  //  title: "Rule 110",
-  //},
-  //{
-  //  path: "gol",
-  //  title: "Conways Game of Life",
-  //},
-  //{
-  //  path: "utxo-token",
-  //  title: "UTXO-based Tokens",
-  //},
+  {
+    path: "p2pkh",
+    title: "Pay to Public Key Hash (P2PKH)",
+  },
+  {
+    path: "r-puzzle",
+    title: "R-Puzzle",
+  },
+  {
+    path: "rabin-signature",
+    title: "Rabin Signature",
+  },
+  {
+    path: "schnoor-signature",
+    title: "Schnoor Signatures",
+  },
+  {
+    path: "multiparty-hash-puzzles",
+    title: "Multiparty Hash Puzzles",
+  },
+  {
+    path: "ecdsa-oracles",
+    title: "ECDSA-based Oracles",
+  },
+  {
+    path: "vanity-address",
+    title: "Trustless Outsourced Vanity Address Generation",
+  },
+  {
+    path: "auction",
+    title: "Auctions",
+  },
+  {
+    path: "cointoss",
+    title: "Fair Coin Toss",
+  },
+  {
+    path: "tic-tac-toe",
+    title: "Tic-Tac-Toe",
+  },
+  {
+    path: "rule110",
+    title: "Rule 110",
+  },
+  {
+    path: "gol",
+    title: "Conways Game of Life",
+  },
+  {
+    path: "turing-machine",
+    title: "Turing Machine",
+  },
 ]
 
 const HACK_ROUTES: Route[] = []
@@ -171,13 +171,14 @@ export const ROUTES_BY_CATEGORY = [
     title: "",
     routes: SOL_ROUTES,
   },
-  //{
-  //  title: "Applications",
-  //  routes: APP_ROUTES.map((route) => ({
-  //    ...route,
-  //    path: `/app/${route.path}`,
-  //  })),
-  //},
+  {
+    title: "Applications",
+    routes: APP_ROUTES,
+    //routes: APP_ROUTES.map((route) => ({
+    //  ...route,
+    //  path: `/app/${route.path}`,
+    //})),
+  },
   //{
   //  title: "Hacks",
   //  routes: HACK_ROUTES.map((route) => ({

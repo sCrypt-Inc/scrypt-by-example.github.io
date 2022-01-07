@@ -1,0 +1,99 @@
+---
+title: Conway's Game of Life
+version: 0.1.0
+description: Conway's Game of Life in sCrypt
+---
+
+Rules:
+1. Any live cell with fewer than two live neighbours dies, as if by needs caused by underpopulation.
+2. Any live cell with more than three live neighbours dies, as if by overcrowding.
+3. Any live cell with two or three live neighbours lives, unchanged, to the next generation.
+4. Any dead cell with exactly three live neighbours cells will come to life.
+
+The generation of the game is stored as the [state](https://by-example.scrypt.io/stateful-contract/) of the contract.
+
+```javascript
+import "arrayUtil.scrypt";
+
+
+// Conway Game Of Life on a board of N * N
+contract GameOfLife {
+
+    static const int N = 5;
+    // effctively we play on a grid of (N+2) * (N+2) without handling boundary cells
+    static const int BOARD_SIZE = GameOfLife.N + 2;
+    static bytes LIVE = b'01';
+    static bytes DEAD = b'00';
+    static const int LOOP_NEIGHBORS = 3;
+
+    @state
+    bytes board;
+
+    public function play(int amount, SigHashPreimage txPreimage) {
+        require(Tx.checkPreimage(txPreimage));
+
+        // make the move
+        this.board = GameOfLife.evolve(this.board);
+
+        // update state: next turn & next board
+        bytes scriptCode_ = this.getStateScript();
+        bytes output = Utils.buildOutput(scriptCode_, amount);
+        bytes outputs = output;
+
+        require(hash256(outputs) == SigHash.hashOutputs(txPreimage));
+    }
+
+    static function evolve(bytes oldBoard) : bytes {
+        bytes newBoard = oldBoard;
+
+        int i = 1;
+        loop (GameOfLife.N) {
+            int j = 1;
+            loop (GameOfLife.N) {
+                bytes nextState = GameOfLife.next(oldBoard, i, j);
+                newBoard = ArrayUtil.setElemAt(newBoard, GameOfLife.index(i, j), nextState);
+
+                j++;
+            }
+
+            i++;
+        }
+
+        return newBoard;
+    }
+
+    static function next(bytes oldBoard, int row, int col) : bytes {
+        // number of neighbors alive
+        int alive = 0;
+
+        int i = -1;
+        loop (LOOP_NEIGHBORS) {
+            int j = -1;
+
+            loop (LOOP_NEIGHBORS) {
+                if (!(i == 0 && j == 0)) {
+                    if (ArrayUtil.getElemAt(oldBoard, GameOfLife.index(row + i, col + j))) {
+                        alive++;
+                    }
+                }
+                j++;
+            }
+
+            i++;
+        }
+
+        bytes oldState = ArrayUtil.getElemAt(oldBoard, GameOfLife.index(row, col));
+        /* rule
+        1. Any live cell with two or three live neighbours survives.
+        2. Any dead cell with three live neighbours becomes a live cell.
+        3. All other live cells die in the next generation. Similarly, all other dead cells stay dead.
+        */
+        return (alive == 3 || alive == 2 && oldState == LIVE) ? LIVE : DEAD;
+    }
+
+    static function index(int i, int j) : int {
+        return i * GameOfLife.BOARD_SIZE + j;
+    }
+}
+```
+
