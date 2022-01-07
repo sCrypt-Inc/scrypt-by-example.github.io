@@ -61,14 +61,12 @@ SigHashType s = SigHash.ALL | SigHash.ANYONECANPAY;
 
 - `SigHashPreimage` - a sighash preimage.
 ```javascript
-SigHashType s = SigHashType(b'01');
-SigHashType s = SigHash.ALL | SigHash.ANYONECANPAY;
+SigHashPreimage s = SigHashPreimage(b'0100000028bcef7e73248aa273db19d73');
 ```
 
 ### Subtypes of `int`
 
 - `PrivKey` - an EC private key.
 ```javascript
-SigHashType s = SigHashType(b'01');
-SigHashType s = SigHash.ALL | SigHash.ANYONECANPAY;
+PrivKey privKey = PrivKey(0x00112233445566778899aabbccddeeffffeeddccbbaa99887766554433221100);
 ```

@@ -13,12 +13,15 @@ type Coordinate = int[2];
 
 They can also be used for struct types.
 
+Struct definition:
 ```javascript
 struct Point {
   int x;
   int y;
 }
 ```
+
+Creating an alias for the defined struct:
 ```javascript
 type Coordinate = Point;
 ```

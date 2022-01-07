@@ -1,7 +1,7 @@
 ---
-title: Struct Types
+title: Loops
 version: 0.1.0
-description: Struct types in sCrypt
+description: Loops in sCrypt
 ---
 
 sCrypt allows looping by repeating the loop body a specified number of times. For example, the loop

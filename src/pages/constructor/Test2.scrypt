@@ -9,5 +9,5 @@ contract Test {
         this.x3 = x3;
     }
 
-    public function equal(int y) {}
+    public function equal(int y) {...}
 }

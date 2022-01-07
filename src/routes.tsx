@@ -8,7 +8,9 @@ import component_contract_private_functions from "./pages/contract-private-funct
 import component_exit from "./pages/exit"
 import component_generics from "./pages/generics"
 import component_hello_world from "./pages/hello-world"
+import component_if_else from "./pages/if-else"
 import component_import from "./pages/import"
+import component_inline_assembly from "./pages/inline-assembly"
 import component_library from "./pages/library"
 import component_loop from "./pages/loop"
 import component_operators from "./pages/operators"
@@ -70,8 +72,16 @@ const routes: Route[] = [
         component: component_hello_world
     },
     {
+        path: "/if-else",
+        component: component_if_else
+    },
+    {
         path: "/import",
         component: component_import
+    },
+    {
+        path: "/inline-assembly",
+        component: component_inline_assembly
     },
     {
         path: "/library",

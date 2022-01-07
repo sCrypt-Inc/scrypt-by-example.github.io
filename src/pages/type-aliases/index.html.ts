@@ -8,11 +8,13 @@ const html = `<p>Type aliases create a new name for a type. It does not actually
 type <span class="hljs-title class_">Coordinate</span> = int[<span class="hljs-number">2</span>];
 </code></pre>
 <p>They can also be used for struct types.</p>
+<p>Struct definition:</p>
 <pre><code class="language-javascript">struct <span class="hljs-title class_">Point</span> {
   int x;
   int y;
 }
 </code></pre>
+<p>Creating an alias for the defined struct:</p>
 <pre><code class="language-javascript">type <span class="hljs-title class_">Coordinate</span> = <span class="hljs-title class_">Point</span>;
 </code></pre>
 `

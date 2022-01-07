@@ -1,7 +1,7 @@
 // metadata
 export const version = "0.1.0"
-export const title = "Struct Types"
-export const description = "Struct types in sCrypt"
+export const title = "Loops"
+export const description = "Loops in sCrypt"
 
 const html = `<p>sCrypt allows looping by repeating the loop body a specified number of times. For example, the loop</p>
 <pre><code class="language-javascript">loop (<span class="hljs-number">10</span>) {

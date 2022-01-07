@@ -49,15 +49,13 @@ bytes b3 = b<span class="hljs-string">&#x27;1122&#x27;</span> + b<span class="hl
 </code></pre>
 </li>
 <li><p><code>SigHashPreimage</code> - a sighash preimage.</p>
-<pre><code class="language-javascript"><span class="hljs-title class_">SigHashType</span> s = <span class="hljs-title class_">SigHashType</span>(b<span class="hljs-string">&#x27;01&#x27;</span>);
-<span class="hljs-title class_">SigHashType</span> s = <span class="hljs-title class_">SigHash</span>.<span class="hljs-property">ALL</span> | <span class="hljs-title class_">SigHash</span>.<span class="hljs-property">ANYONECANPAY</span>;
+<pre><code class="language-javascript"><span class="hljs-title class_">SigHashPreimage</span> s = <span class="hljs-title class_">SigHashPreimage</span>(b<span class="hljs-string">&#x27;0100000028bcef7e73248aa273db19d73&#x27;</span>);
 </code></pre>
 </li>
 </ul>
 <h3 id="subtypes-of-int">Subtypes of <code>int</code></h3>
 <ul>
-<li><code>PrivKey</code> - an EC private key.<pre><code class="language-javascript"><span class="hljs-title class_">SigHashType</span> s = <span class="hljs-title class_">SigHashType</span>(b<span class="hljs-string">&#x27;01&#x27;</span>);
-<span class="hljs-title class_">SigHashType</span> s = <span class="hljs-title class_">SigHash</span>.<span class="hljs-property">ALL</span> | <span class="hljs-title class_">SigHash</span>.<span class="hljs-property">ANYONECANPAY</span>;
+<li><code>PrivKey</code> - an EC private key.<pre><code class="language-javascript"><span class="hljs-title class_">PrivKey</span> privKey = <span class="hljs-title class_">PrivKey</span>(<span class="hljs-number">0x00112233445566778899aabbccddeeffffeeddccbbaa99887766554433221100</span>);
 </code></pre>
 </li>
 </ul>

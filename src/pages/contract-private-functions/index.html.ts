@@ -1,7 +1,7 @@
 // metadata
 export const version = "0.1.0"
-export const title = "Contract-Private functions"
-export const description = "Contract-private functions in sCrypt"
+export const title = "Functions"
+export const description = "Functions in sCrypt"
 
 const html = `<p>sCrypt enables developers to define their own functions as exemplified below:</p>
 <pre><code class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sum</span>(<span class="hljs-params">int a, int b</span>): int {

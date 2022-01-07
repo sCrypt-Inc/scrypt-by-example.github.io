@@ -28,10 +28,10 @@ contract Counter {
         bytes outputScript = this.getStateScript();
 
         // Construct an output from its locking script and satoshi amount.
-        bytes output = Util.buildOutput(outputScript, amount);
+        bytes output = Utils.buildOutput(outputScript, amount);
 
         // Ensure that the TX actually contains this exact output.
-        require(hash256(output) == Util.hashOutputs(txPreimage));
+        require(hash256(output) == SigHash.hashOutputs(txPreimage));
     }
 }
 ```

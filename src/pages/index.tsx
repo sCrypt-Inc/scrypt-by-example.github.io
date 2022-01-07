@@ -50,21 +50,25 @@ const SOL_ROUTES: Route[] = [
     title: "Const Variables",
   },
   {
+    path: "if-else",
+    title: "If / Else",
+  },
+  {
     path: "public-function",
     title: "Public Function",
   },
   {
     path: "contract-private-functions",
-    title: "Contract-Private Functions",
+    title: "Functions",
   },
   {
     path: "exit",
     title: "Exit",
   },
-  {
-    path: "code-seperator",
-    title: "Code seperator",
-  },
+  //{
+  //  path: "code-seperator",
+  //  title: "Code seperator",
+  //},
   {
     path: "access-modifiers",
     title: "Access Modifiers",
@@ -97,9 +101,66 @@ const SOL_ROUTES: Route[] = [
     path: "stateful-contract",
     title: "Stateful Contract",
   },
+  {
+    path: "inline-assembly",
+    title: "Inline Assembly",
+  },
 ]
 
-const APP_ROUTES: Route[] = []
+const APP_ROUTES: Route[] = [
+  //{
+  //  path: "p2pkh",
+  //  title: "Pay to Public Key Hash (P2PKH)",
+  //},
+  //{
+  //  path: "r-puzzle",
+  //  title: "R-Puzzle",
+  //},
+  //{
+  //  path: "rabin-signature",
+  //  title: "Rabin Signature",
+  //},
+  //{
+  //  path: "schnoor-signatures",
+  //  title: "Schnoor Signatures",
+  //},
+  //{
+  //  path: "multiparty-hash-puzzles",
+  //  title: "Multiparty Hash Puzzles",
+  //},
+  //{
+  //  path: "ecdsa-oracles",
+  //  title: "ECDSA-based Oracles",
+  //},
+  //{
+  //  path: "vanity-address",
+  //  title: "Trustless Outsourced Vanity Address Generation",
+  //},
+  //{
+  //  path: "auction",
+  //  title: "Auctions",
+  //},
+  //{
+  //  path: "cointoss",
+  //  title: "Fair Coin Toss",
+  //},
+  //{
+  //  path: "tic-tac-toe",
+  //  title: "Tic-Tac-Toe",
+  //},
+  //{
+  //  path: "rule110",
+  //  title: "Rule 110",
+  //},
+  //{
+  //  path: "gol",
+  //  title: "Conways Game of Life",
+  //},
+  //{
+  //  path: "utxo-token",
+  //  title: "UTXO-based Tokens",
+  //},
+]
 
 const HACK_ROUTES: Route[] = []
 
@@ -150,8 +211,8 @@ function HomePage() {
       <div className={styles.subHeader}></div>
       <div className={styles.main}>
         <p>
-          an introduction to <a href="https://scrypt.io/">sCrypt</a> with
-          simple examples
+          An introduction to <a href="https://scrypt.io/">sCrypt</a> with
+          simple examples.
         </p>
 
         <div className={styles.youTube}>

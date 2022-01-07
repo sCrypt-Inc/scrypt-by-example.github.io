@@ -10,7 +10,7 @@ const html = `<p>We can define a constructor in order to store variables in a co
     bytes x2;
     bool x3;
 
-    public <span class="hljs-keyword">function</span> <span class="hljs-title function_">equal</span>(<span class="hljs-params">int y</span>) {}
+    public <span class="hljs-keyword">function</span> <span class="hljs-title function_">equal</span>(<span class="hljs-params">int y</span>) {...}
 }
 </code></pre>
 <p>or explicitly:</p>
@@ -25,7 +25,7 @@ const html = `<p>We can define a constructor in order to store variables in a co
         <span class="hljs-variable language_">this</span>.<span class="hljs-property">x3</span> = x3;
     }
 
-    public <span class="hljs-keyword">function</span> <span class="hljs-title function_">equal</span>(<span class="hljs-params">int y</span>) {}
+    public <span class="hljs-keyword">function</span> <span class="hljs-title function_">equal</span>(<span class="hljs-params">int y</span>) {...}
 }
 </code></pre>
 <p>Both examples are functionally equivalent.</p>

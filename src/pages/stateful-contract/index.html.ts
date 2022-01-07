@@ -24,10 +24,10 @@ const html = `<p>Declare any property that is part of the state with <code>@stat
         bytes outputScript = <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">getStateScript</span>();
 
         <span class="hljs-comment">// Construct an output from its locking script and satoshi amount.</span>
-        bytes output = <span class="hljs-title class_">Util</span>.<span class="hljs-title function_">buildOutput</span>(outputScript, amount);
+        bytes output = <span class="hljs-title class_">Utils</span>.<span class="hljs-title function_">buildOutput</span>(outputScript, amount);
 
         <span class="hljs-comment">// Ensure that the TX actually contains this exact output.</span>
-        <span class="hljs-built_in">require</span>(<span class="hljs-title function_">hash256</span>(output) == <span class="hljs-title class_">Util</span>.<span class="hljs-title function_">hashOutputs</span>(txPreimage));
+        <span class="hljs-built_in">require</span>(<span class="hljs-title function_">hash256</span>(output) == <span class="hljs-title class_">SigHash</span>.<span class="hljs-title function_">hashOutputs</span>(txPreimage));
     }
 }
 </code></pre>

@@ -1,7 +1,7 @@
 ---
-title: Contract-Private functions
+title: Functions
 version: 0.1.0
-description: Contract-private functions in sCrypt
+description: Functions in sCrypt
 ---
 
 sCrypt enables developers to define their own functions as exemplified below:
