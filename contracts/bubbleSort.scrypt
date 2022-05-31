@@ -1,0 +1,39 @@
+
+library bubbleSort {
+    static const int ARRAY_ITEM_MAX = 10;
+
+    // bubble sort at the given int[]
+    static function sort(int[ARRAY_ITEM_MAX] arr) : int[ARRAY_ITEM_MAX] {
+        int temp = 0;
+        loop (ARRAY_ITEM_MAX) : i {
+            loop (ARRAY_ITEM_MAX) : j {
+                if(j > i) {
+                    if(arr[i] > arr[j]) {
+                        temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+        }
+        return arr;
+    }
+}
+
+contract bubbleSortTest {
+    public function test1() {
+        int[bubbleSort.ARRAY_ITEM_MAX] arr1 = [-200, 0, 100, -1, 3, 60, 3, 45, 11, -10];
+        int[bubbleSort.ARRAY_ITEM_MAX] arr2 = bubbleSort.sort(arr1);
+        
+        require(arr2[0] == -200);
+        require(arr2[9] == 100);
+    }
+
+    public function test2() {
+        int[bubbleSort.ARRAY_ITEM_MAX] arr1 = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        int[bubbleSort.ARRAY_ITEM_MAX] arr2 = bubbleSort.sort(arr1);
+        
+        require(arr2[0] == 0);
+        require(arr2[9] == 1);
+    }
+}
