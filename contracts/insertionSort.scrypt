@@ -1,0 +1,44 @@
+
+library insertionSort {
+    static const int ARRAY_ITEM_MAX = 5;
+
+    // bubble sort at the given int[]
+    static function sort(int[ARRAY_ITEM_MAX] arr) : int[ARRAY_ITEM_MAX] {
+        int temp = 0;
+        loop (ARRAY_ITEM_MAX) : i {
+            loop (ARRAY_ITEM_MAX) : j {
+                if(j > i) {
+                    loop (ARRAY_ITEM_MAX) : k {
+                        if(k < j) {
+                            if(arr[k] > arr[j]) {
+                                temp = arr[k];
+                                arr[k] = arr[j];
+                                arr[j] = temp;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return arr;
+    }
+}
+
+contract insertionSortTest {
+    public function test() {
+        int[insertionSort.ARRAY_ITEM_MAX] arr1 = [60, 3, 45, 11, -10];
+        int[insertionSort.ARRAY_ITEM_MAX] arr2 = insertionSort.sort(arr1);
+        require(arr2[0] == -10);
+        require(arr2[4] == 60);
+
+        arr1 = [1, 0, -1, 0, 0];
+        arr2 = insertionSort.sort(arr1);
+        require(arr2[0] == -1);
+        require(arr2[4] == 1);
+
+        arr1 = [-200, 0, 100, -1, 300];
+        arr2 = insertionSort.sort(arr1);
+        require(arr2[0] == -200);
+        require(arr2[4] == 300);
+    }
+}
