@@ -1,5 +1,5 @@
 
-library insertionSort {
+library InsertionSort {
     static const int ARRAY_ITEM_MAX = 5;
 
     // bubble sort at the given int[]
@@ -24,21 +24,30 @@ library insertionSort {
     }
 }
 
-contract insertionSortTest {
+contract InsertionSortTest {
     public function test() {
-        int[insertionSort.ARRAY_ITEM_MAX] arr1 = [60, 3, 45, 11, -10];
-        int[insertionSort.ARRAY_ITEM_MAX] arr2 = insertionSort.sort(arr1);
+        int[InsertionSort.ARRAY_ITEM_MAX] arr1 = [60, 3, 45, 11, -10];
+        int[InsertionSort.ARRAY_ITEM_MAX] arr2 = InsertionSort.sort(arr1);
         require(arr2[0] == -10);
+        require(arr2[1] == 3);
+        require(arr2[2] == 11);
+        require(arr2[3] == 45);
         require(arr2[4] == 60);
 
         arr1 = [1, 0, -1, 0, 0];
-        arr2 = insertionSort.sort(arr1);
+        arr2 = InsertionSort.sort(arr1);
         require(arr2[0] == -1);
+        require(arr2[1] == 0);
+        require(arr2[2] == 0);
+        require(arr2[3] == 0);
         require(arr2[4] == 1);
 
         arr1 = [-200, 0, 100, -1, 300];
-        arr2 = insertionSort.sort(arr1);
+        arr2 = InsertionSort.sort(arr1);
         require(arr2[0] == -200);
+        require(arr2[1] == -1);
+        require(arr2[2] == 0);
+        require(arr2[3] == 100);
         require(arr2[4] == 300);
     }
 }
