@@ -69,16 +69,16 @@ contract TuringMachine {
     static const int N = 8;
     // transition function table
     static const TransitionFuncEntry[N] transitionFuncTable = [
-        {{STATE_A, OPEN},   {STATE_A, OPEN, RIGHT}},
-        {{STATE_A, X},      {STATE_A, X, RIGHT}},
-        {{STATE_A, CLOSE},  {STATE_B, X, LEFT}},
-        {{STATE_A, BLANK},  {STATE_C, BLANK, LEFT}},
+        { {STATE_A, OPEN},   {STATE_A, OPEN, RIGHT} },
+        { {STATE_A, X},      {STATE_A, X, RIGHT} },
+        { {STATE_A, CLOSE},  {STATE_B, X, LEFT} },
+        { {STATE_A, BLANK},  {STATE_C, BLANK, LEFT} },
         
-        {{STATE_B, OPEN},   {STATE_A, X, RIGHT}},
-        {{STATE_B, X},      {STATE_B, X, LEFT}},
+        { {STATE_B, OPEN},   {STATE_A, X, RIGHT} },
+        { {STATE_B, X},      {STATE_B, X, LEFT} },
 
-        {{STATE_C, X},      {STATE_C, X, LEFT}},
-        {{STATE_C, BLANK},  {STATE_ACCEPT, BLANK, RIGHT}}
+        { {STATE_C, X},      {STATE_C, X, LEFT} },
+        { {STATE_C, BLANK},  {STATE_ACCEPT, BLANK, RIGHT} }
     ];
     
     public function transit(SigHashPreimage txPreimage) {
