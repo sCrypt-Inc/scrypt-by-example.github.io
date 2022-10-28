@@ -11,7 +11,6 @@ Structs can be defined like the following:
 import "serializer.scrypt";
 import "arrayUtil.scrypt";
 
-
 // Turing machine state
 type State = bytes;
 // alphabet symbol in each cell, 1 byte long each
@@ -69,22 +68,19 @@ contract TuringMachine {
     static const int N = 8;
     // transition function table
     static const TransitionFuncEntry[N] transitionFuncTable = [
-        { {STATE_A, OPEN},   {STATE_A, OPEN, RIGHT} },
-        { {STATE_A, X},      {STATE_A, X, RIGHT} },
-        { {STATE_A, CLOSE},  {STATE_B, X, LEFT} },
-        { {STATE_A, BLANK},  {STATE_C, BLANK, LEFT} },
+        {{STATE_A, OPEN},   {STATE_A, OPEN, RIGHT}},
+        {{STATE_A, X},      {STATE_A, X, RIGHT}},
+        {{STATE_A, CLOSE},  {STATE_B, X, LEFT}},
+        {{STATE_A, BLANK},  {STATE_C, BLANK, LEFT}},
         
-        { {STATE_B, OPEN},   {STATE_A, X, RIGHT} },
-        { {STATE_B, X},      {STATE_B, X, LEFT} },
+        {{STATE_B, OPEN},   {STATE_A, X, RIGHT}},
+        {{STATE_B, X},      {STATE_B, X, LEFT}},
 
-        { {STATE_C, X},      {STATE_C, X, LEFT} },
-        { {STATE_C, BLANK},  {STATE_ACCEPT, BLANK, RIGHT} }
+        {{STATE_C, X},      {STATE_C, X, LEFT}},
+        {{STATE_C, BLANK},  {STATE_ACCEPT, BLANK, RIGHT}}
     ];
     
     public function transit(SigHashPreimage txPreimage) {
-        // read/deserialize contract state
-        SigHashType sigHashType = SigHash.ANYONECANPAY | SigHash.SINGLE | SigHash.FORKID;
-        require(Tx.checkPreimageSigHashType(txPreimage, sigHashType));
         // transition
         Symbol head = ArrayUtil.getElemAt(this.states.tape, this.states.headPos);
         // look up in transition table
@@ -124,10 +120,15 @@ contract TuringMachine {
         require(found);
 
         // otherwise machine goes to the next step
-        bytes stateScript = this.getStateScript();
-        bytes output = Utils.buildOutput(stateScript, SigHash.value(txPreimage));
-        require(hash256(output) == SigHash.hashOutputs(txPreimage));
+        require(this.propagateState(txPreimage, SigHash.value(txPreimage)));
+    }
 
+    function propagateState(SigHashPreimage txPreimage, int value) : bool {
+        SigHashType sigHashType = SigHash.ANYONECANPAY | SigHash.SINGLE | SigHash.FORKID;
+        require(Tx.checkPreimageSigHashType(txPreimage, sigHashType));
+        bytes outputScript = this.getStateScript();
+        bytes output = Utils.buildOutput(outputScript, value);
+        return hash256(output) == SigHash.hashOutputs(txPreimage);
     }
 }
 ```

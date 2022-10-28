@@ -10,28 +10,23 @@ In order to presist the state, we need to enforce it in the output of the transa
 
 ```javascript
 contract Counter {
+
     @state
     int counter;
 
-    constructor(int counter) {
-        this.counter = counter;
-    }
-
     public function increment(SigHashPreimage txPreimage, int amount) {
-        // Ensure that the passed preimage is correct for this TX.
-        require(Tx.checkPreimage(txPreimage));
-
-        // Mutate state.
+        // Increment counter value.
         this.counter++;
 
-        // Get this TXs output.
+        // Ensure next output contains script with updated counter value.
+        require(this.propagateState(txPreimage, amount));
+    }
+
+    function propagateState(SigHashPreimage txPreimage, int amount) : bool {
+        require(Tx.checkPreimage(txPreimage));
         bytes outputScript = this.getStateScript();
-
-        // Construct an output from its locking script and satoshi amount.
         bytes output = Utils.buildOutput(outputScript, amount);
-
-        // Ensure that the TX actually contains this exact output.
-        require(hash256(output) == SigHash.hashOutputs(txPreimage));
+        return (hash256(output) == SigHash.hashOutputs(txPreimage));
     }
 }
 ```

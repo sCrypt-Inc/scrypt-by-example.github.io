@@ -21,8 +21,6 @@ contract Auction {
 
     // bid with a higher offer
     public function bid(Ripemd160 bidder, int bid, int changeSats, SigHashPreimage txPreimage) {
-        require(Tx.checkPreimage(txPreimage));
-
         int highestBid = SigHash.value(txPreimage);
         require(bid > highestBid);
 
@@ -42,7 +40,7 @@ contract Auction {
 
         bytes output = auctionOutput + refundOutput + changeOutput;
 
-        require(hash256(output) == SigHash.hashOutputs(txPreimage));
+        require(this.propagateState(txPreimage, output));
     }
 
     // withdraw after bidding is over
@@ -50,6 +48,11 @@ contract Auction {
         require(Tx.checkPreimage(txPreimage));
         require(SigHash.nLocktime(txPreimage) >= this.auctionDeadline);
         require(checkSig(sig, this.auctioner));
+    }
+
+    function propagateState(SigHashPreimage txPreimage, bytes outputs) : bool {
+        require(Tx.checkPreimage(txPreimage));
+        return (hash256(outputs) == SigHash.hashOutputs(txPreimage));
     }
 }
 ```

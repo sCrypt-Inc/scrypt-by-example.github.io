@@ -4,7 +4,7 @@ export const title = "R-Puzzle"
 export const description = "R-Puzzle contract in sCrypt"
 
 const html = `<p>In a <a href="https://wiki.bitcoinsv.io/index.php/R-Puzzles">R-Puzzle</a>, an ephemeral key <code>k</code> is never revealed. Instead <code>r</code>, which is the x-coordinate of its corresponding public key, is revealed and from <code>r</code> along with the signature, the knowledge of <code>k</code> can be proven using <code>checkSig()</code>.</p>
-<pre><code class="language-javascript">contract RPuzzle {
+<pre><code class="language-javascript">contract <span class="hljs-title class_">RPuzzle</span> {
     <span class="hljs-title class_">Ripemd160</span> rhash;
 
     <span class="hljs-title function_">constructor</span>(<span class="hljs-params">Ripemd160 rhash</span>) {

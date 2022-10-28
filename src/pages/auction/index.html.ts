@@ -18,8 +18,6 @@ contract <span class="hljs-title class_">Auction</span> {
 
     <span class="hljs-comment">// bid with a higher offer</span>
     public <span class="hljs-keyword">function</span> <span class="hljs-title function_">bid</span>(<span class="hljs-params">Ripemd160 bidder, int bid, int changeSats, SigHashPreimage txPreimage</span>) {
-        <span class="hljs-built_in">require</span>(<span class="hljs-title class_">Tx</span>.<span class="hljs-title function_">checkPreimage</span>(txPreimage));
-
         int highestBid = <span class="hljs-title class_">SigHash</span>.<span class="hljs-title function_">value</span>(txPreimage);
         <span class="hljs-built_in">require</span>(bid &gt; highestBid);
 
@@ -39,7 +37,7 @@ contract <span class="hljs-title class_">Auction</span> {
 
         bytes output = auctionOutput + refundOutput + changeOutput;
 
-        <span class="hljs-built_in">require</span>(<span class="hljs-title function_">hash256</span>(output) == <span class="hljs-title class_">SigHash</span>.<span class="hljs-title function_">hashOutputs</span>(txPreimage));
+        <span class="hljs-built_in">require</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">propagateState</span>(txPreimage, output));
     }
 
     <span class="hljs-comment">// withdraw after bidding is over</span>
@@ -47,6 +45,11 @@ contract <span class="hljs-title class_">Auction</span> {
         <span class="hljs-built_in">require</span>(<span class="hljs-title class_">Tx</span>.<span class="hljs-title function_">checkPreimage</span>(txPreimage));
         <span class="hljs-built_in">require</span>(<span class="hljs-title class_">SigHash</span>.<span class="hljs-title function_">nLocktime</span>(txPreimage) &gt;= <span class="hljs-variable language_">this</span>.<span class="hljs-property">auctionDeadline</span>);
         <span class="hljs-built_in">require</span>(<span class="hljs-title function_">checkSig</span>(sig, <span class="hljs-variable language_">this</span>.<span class="hljs-property">auctioner</span>));
+    }
+
+    <span class="hljs-keyword">function</span> <span class="hljs-title function_">propagateState</span>(<span class="hljs-params">SigHashPreimage txPreimage, bytes outputs</span>) : bool {
+        <span class="hljs-built_in">require</span>(<span class="hljs-title class_">Tx</span>.<span class="hljs-title function_">checkPreimage</span>(txPreimage));
+        <span class="hljs-keyword">return</span> (<span class="hljs-title function_">hash256</span>(outputs) == <span class="hljs-title class_">SigHash</span>.<span class="hljs-title function_">hashOutputs</span>(txPreimage));
     }
 }
 </code></pre>

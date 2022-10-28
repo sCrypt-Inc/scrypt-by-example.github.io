@@ -38,17 +38,10 @@ const html = `<p>The Rule 110 cellular automaton is a 1-dimensional elementary C
 
     @state
     bytes board;
+    
     public <span class="hljs-keyword">function</span> <span class="hljs-title function_">play</span>(<span class="hljs-params">int amount, SigHashPreimage txPreimage</span>) {
-        <span class="hljs-title class_">SigHashType</span> sigHashType = <span class="hljs-title class_">SigHash</span>.<span class="hljs-property">ANYONECANPAY</span> | <span class="hljs-title class_">SigHash</span>.<span class="hljs-property">SINGLE</span> | <span class="hljs-title class_">SigHash</span>.<span class="hljs-property">FORKID</span>;
-        <span class="hljs-comment">// this ensures the preimage is for the current tx</span>
-        <span class="hljs-built_in">require</span>(<span class="hljs-title class_">Tx</span>.<span class="hljs-title function_">checkPreimageSigHashType</span>(txPreimage, sigHashType));
-
         <span class="hljs-variable language_">this</span>.<span class="hljs-property">board</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">computeNewBoard</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">board</span>);
-
-        bytes newScriptCode = <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">getStateScript</span>();
-        bytes output = <span class="hljs-title class_">Utils</span>.<span class="hljs-title function_">buildOutput</span>(newScriptCode, amount);
-
-        <span class="hljs-built_in">require</span>(<span class="hljs-title function_">hash256</span>(output) == <span class="hljs-title class_">SigHash</span>.<span class="hljs-title function_">hashOutputs</span>(txPreimage));
+        <span class="hljs-built_in">require</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">propagateState</span>(txPreimage, amount));
     }
 
     <span class="hljs-keyword">function</span> <span class="hljs-title function_">computeNewBoard</span>(<span class="hljs-params">bytes board</span>) : bytes {
@@ -80,6 +73,15 @@ const html = `<p>The Rule 110 cellular automaton is a 1-dimensional elementary C
             res = <span class="hljs-variable constant_">DEAD</span>;
         }
         <span class="hljs-keyword">return</span> res;
+    }
+
+    <span class="hljs-keyword">function</span> <span class="hljs-title function_">propagateState</span>(<span class="hljs-params">SigHashPreimage txPreimage, int value</span>) : bool {
+        <span class="hljs-title class_">SigHashType</span> sigHashType = <span class="hljs-title class_">SigHash</span>.<span class="hljs-property">ANYONECANPAY</span> | <span class="hljs-title class_">SigHash</span>.<span class="hljs-property">SINGLE</span> | <span class="hljs-title class_">SigHash</span>.<span class="hljs-property">FORKID</span>;
+        <span class="hljs-comment">// this ensures the preimage is for the current tx</span>
+        <span class="hljs-built_in">require</span>(<span class="hljs-title class_">Tx</span>.<span class="hljs-title function_">checkPreimageSigHashType</span>(txPreimage, sigHashType));
+        bytes outputScript = <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">getStateScript</span>();
+        bytes output = <span class="hljs-title class_">Utils</span>.<span class="hljs-title function_">buildOutput</span>(outputScript, value);
+        <span class="hljs-keyword">return</span> <span class="hljs-title function_">hash256</span>(output) == <span class="hljs-title class_">SigHash</span>.<span class="hljs-title function_">hashOutputs</span>(txPreimage);
     }
 }
 </code></pre>
