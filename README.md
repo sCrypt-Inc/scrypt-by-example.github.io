@@ -1,6 +1,6 @@
 # scrypt-by-example.github.io
 
-[sCrypt By Example](https://scrypt-by-example.org)
+[sCrypt By Example](https://scrypt-by-example.scrypt.io)
 
 ### License
 
